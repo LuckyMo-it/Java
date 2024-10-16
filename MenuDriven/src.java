@@ -9,19 +9,20 @@ class src{
     string str=new string();
     pattern p=new pattern();
     array arr=new array();
+    decoration d=new decoration();
         Scanner scan=new Scanner(System.in);
     do {
         
         clearScreen();
-        System.out.println("\t\t----Home Page----");
-        System.out.println("1.Array");
-        System.out.println("2.String");
-        System.out.println("3.Pattern");
+        d.home();
+        d.array();
+        d.string();
+        d.pattern();
         ch=scan.nextLine();
         switch (ch) {
             case "1":
                 clearScreen();
-                System.out.println("\t----Array------");
+                d.array();
                 arr.get();
                 
                 while(true){
@@ -34,7 +35,7 @@ class src{
                 break;
                 case "2":
                 clearScreen();
-                System.out.println("\t----String------");
+                d.string();
                 str.get();
                 
                 while(true){
@@ -48,7 +49,7 @@ class src{
                 case "3":
                 p.get();
                 clearScreen();
-                System.out.println("\t----Pattern------");
+                d.pattern();
                 
                 while(true){
                     
@@ -65,10 +66,11 @@ class src{
                 System.out.println("Please input valid options");
                 break;
         }
-        System.out.println("Do you want to continue(yes/no)");
+        System.out.println("Do you want to continue to Main Menu(yes/no)");
         ch=scan.nextLine();
         if(!ch.equalsIgnoreCase("yes"))
-            choice=false;
+          {  choice=false;
+            d.end();;}
     }while(choice==true);     
     }
     public static void clearScreen() {

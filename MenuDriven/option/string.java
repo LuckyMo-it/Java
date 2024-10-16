@@ -19,7 +19,7 @@ public class string {
 
     public void option() {
         clearScreen();
-        
+        d.string();
         System.out.println("1.Reverse String");
         System.out.println("2.Get Length");
         System.out.println("3.Capitalize String");
@@ -75,7 +75,6 @@ public class string {
                 break;
                 case "9":
                 clearScreen();
-                d.animate();
                 patternMatch(s);
                 break;
                 case "10":
@@ -87,7 +86,7 @@ public class string {
                 clearScreen();
                 System.out.println("Enter Correct Input");
                 break;
-        }
+            }
     }
 
     public void reverse(String s) {
@@ -95,11 +94,11 @@ public class string {
         temp.reverse();
         System.out.println("After Reverse = " + temp);
     }
-
+    
     public void getLength(String s) {
         System.out.println("String Length = " + s.length());
     }
-
+    
     public void capital(String s) {
         String cap="";
         for(int i=0;i<s.length();i++){
@@ -108,25 +107,25 @@ public class string {
 
         System.out.println("Capitalized Successfully: " + cap);
     }
-
+    
     public void lower(String s) {
         String low = s.toLowerCase();
         System.out.println("Lowered Case Successfully: " + low);
     }
-
+    
     public void firstCapital(String s) {
         String[] words = s.split(" ");
         StringBuilder result = new StringBuilder();
-
+        
         for (String word : words) {
             if (word.length() > 0) {
                 result.append(Character.toUpperCase(word.charAt(0)))
-                      .append(word.substring(1).toLowerCase()).append(" ");
+                .append(word.substring(1).toLowerCase()).append(" ");
             }
         }
         System.out.println("First Letter Capitalized: " + result.toString().trim());
     }
-
+    
     public void firstLower(String s) {
         String[] words = s.split(" ");
         StringBuilder result = new StringBuilder();
@@ -134,40 +133,41 @@ public class string {
         for (String word : words) {
             if (word.length() > 0) {
                 result.append(Character.toLowerCase(word.charAt(0)))
-                      .append(word.substring(1)).append(" ");
+                .append(word.substring(1)).append(" ");
             }
         }
         System.out.println("First Letter Lowercased: " + result.toString().trim());
     }
-
+    
     public void show(String s) {
         System.out.println(s);
     }
-
+    
     public void zumble1(String s) {
         String[] words = s.split(" ");
         StringBuilder result = new StringBuilder();
-
+        
         for (int i = words.length - 1; i >= 0; i--) {
             result.append(words[i]).append(" ");
         }
         System.out.println("After Zumbled: " + result.toString().trim());
     }
-
+    
     public void zumble2(String s) {
         String[] words = s.split(" ");
         StringBuilder result = new StringBuilder();
-
+        
         for (String word : words) {
             String reversedWord = new StringBuilder(word).reverse().toString();
             result.append(reversedWord).append(" ");
         }
         System.out.println("After Zumbled: " + result.toString().trim());
     }
-
+    
     public void patternMatch(String s) {
         System.out.println("Enter Pattern:");
         String ptr = scan.nextLine();
+        d.animate();
         if (s.contains(ptr)) {
             System.out.println("Pattern Exists in String");
         } else {

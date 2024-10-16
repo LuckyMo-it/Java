@@ -28,6 +28,7 @@ public class pattern {
     public void option()
     {   
         clearScreen();
+        d.pattern();
         System.out.println("1.Wall Pattern");
         System.out.println("2.Left Side Triangle");
         System.out.println("3.Right Side Triangle");
@@ -45,6 +46,7 @@ public class pattern {
             clearScreen();
             d.animate();
             d.circle();
+            
             leftTriangle();            
             break;
             
@@ -87,7 +89,6 @@ public class pattern {
             case "8":
             clearScreen();
             d.circle();
-            d.animate();
             fallingStar();            
             break;
             case "9":
@@ -119,11 +120,11 @@ public class pattern {
         for(int i=1;i<=n;i++)
         System.out.println(s.repeat(i));
     }
-        public void rightTriangle(){
-            for(int i=1;i<=n;i++){
-                System.out.println(" ".repeat(n-i)+s.repeat(i));
-                
-            }
+    public void rightTriangle(){
+        for(int i=1;i<=n;i++){
+            System.out.println(" ".repeat(n-i)+s.repeat(i));
+            
+        }
         }
     public void filledX(){
         for(int i=1;i<=n+n-1;i++){
@@ -159,6 +160,7 @@ public class pattern {
         for(int i=0;i<arr.length;i++){
             arr[i]=scan.nextInt();
         }
+        d.animate();
         System.out.println();
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]);

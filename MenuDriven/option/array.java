@@ -11,13 +11,14 @@ public class array {
     // Option method to display the menu
     public void option() {
         clearScreen();
-       
+        d.array();
         System.out.println("1.Change Array Input");
         System.out.println("2.Traverse Array");
         System.out.println("3.Sort Array");
         System.out.println("4.Find Maximum");
-        System.out.println("5.Find Minimum");
-        System.out.println("6.Search Element");
+        System.out.println("5.Deletion ");
+        System.out.println("6.Find Minimum");
+        System.out.println("7.Search Element");
         String ch = scan.nextLine();
         
         switch (ch) {
@@ -48,29 +49,28 @@ public class array {
                 break;
                 case "6":
                 clearScreen();
-                d.animate();
                 search();
                 break;
                 default:
                 clearScreen();
                 System.out.println("Enter Correct Input");
                 break;
+            }
         }
-    }
-
+        
     // Method to get array input
     public void get() {
         System.out.println("Enter Size of Array:");
         int n = scan.nextInt();
         arr = new int[n]; // Allocate array dynamically
-
+        
         System.out.println("Enter Elements of Array:");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scan.nextInt();
         }
         scan.nextLine(); // Consume newline character to avoid issues with nextLine
     }
-
+    
     // Method to traverse and print array elements
     public void traverse() {
         System.out.println("Array elements:");
@@ -79,13 +79,13 @@ public class array {
         }
         System.out.println();
     }
-
+    
     // Method to sort the array
     public void sort() {
         System.out.println("--------Sort Tab--------");
         System.out.println("1.Selection Sort\t2.Bubble Sort\t3.Insertion Sort");
         String c = scan.nextLine();
-
+        
         switch (c) {
             case "1":
                 System.out.println("----------Selection Sort-------");
@@ -100,8 +100,8 @@ public class array {
                 }
                 System.out.println("Selection Sort completed.");
                 break;
-
-            case "2":
+                
+                case "2":
                 System.out.println("----------Bubble Sort-------");
                 for (int i = 0; i < arr.length; i++) {
                     for (int j = 0; j < arr.length - 1; j++) {
@@ -114,8 +114,8 @@ public class array {
                 }
                 System.out.println("Bubble Sort completed.");
                 break;
-
-            case "3":
+                
+                case "3":
                 System.out.println("----------Insertion Sort-------");
                 int n = arr.length;
                 for (int i = 1; i < n; ++i) {
@@ -130,13 +130,13 @@ public class array {
                 }
                 System.out.println("Insertion Sort completed.");
                 break;
-
+                
             default:
                 System.out.println("Invalid option in sort menu.");
                 break;
         }
     }
-
+    
     // Method to find the maximum element in the array
     public void max() {
         if (arr != null && arr.length > 0) {
@@ -146,7 +146,7 @@ public class array {
             System.out.println("Array is empty. Please input an array first.");
         }
     }
-
+    
     // Method to find the minimum element (you can call this if needed)
     public void min() {
         if (arr != null && arr.length > 0) {
@@ -171,19 +171,21 @@ public class array {
             case "1":
             clearScreen();
             System.out.println("--Linear Search--");
+            d.animate();
             int i;
-                for(i=0;i<arr.length;i++){
-                    if(data==arr.length){
-                        System.out.println("Data Fount at "+i);
-                        break;
-                    }
+            for(i=0;i<arr.length;i++){
+                if(data==arr.length){
+                    System.out.println("Data Fount at "+i);
+                    break;
                 }
-                if(i==arr.length)
-                System.out.println("Data Dont Exists");
-                break;
+            }
+            if(i==arr.length)
+            System.out.println("Data Dont Exists");
+            break;
             case "2":
             clearScreen();
             System.out.println("--Binary Search--");
+            d.animate();
             int s=0;
             int e=arr.length-1;
             int m;
